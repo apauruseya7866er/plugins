@@ -106,16 +106,22 @@ async function runPool(items, limit, worker) {
   return results;
 }
 
-const ICON = { PASS: '✅', FAIL: '❌', INCONCLUSIVE: '⚠️' };
+const ICON = { PASS: '✅', FAIL: '❌', UNKNOWN: '❔' };
 
 /**
- * Worst-status-wins rollup. A plugin with one hard FAIL is a FAIL even if its
- * other steps passed, because a reader hitting that step gets nothing.
+ * Worst-status-wins rollup.
+ *
+ * UNKNOWN is deliberately separate from INCONCLUSIVE. "We were blocked and
+ * could not find out" is a different statement from "we got through and the
+ * scraper is broken", and collapsing them into one grey bucket made a blocked
+ * row read as an accusation against a plugin that may work perfectly in the
+ * app. UNKNOWN means the health of this plugin is genuinely undetermined; it is
+ * never evidence of a defect.
  */
 function overallVerdict(steps, loadError) {
   if (loadError) return 'FAIL';
   if (steps.some(s => s.status === 'FAIL')) return 'FAIL';
-  if (steps.some(s => s.status === 'INCONCLUSIVE')) return 'INCONCLUSIVE';
+  if (steps.some(s => s.status === 'INCONCLUSIVE')) return 'UNKNOWN';
   return 'PASS';
 }
 
@@ -129,10 +135,7 @@ function summarise(steps, loadError) {
   const novel = steps.find(s => s.name === 'parseNovel');
   const chapter = steps.find(s => s.name === 'parseChapter');
   if (novel?.status === 'PASS' && chapter?.status === 'PASS') {
-    const n = Number.parseInt(chapter.detail, 10);
-    return Number.isFinite(n)
-      ? `${novel.detail}, ${chapter.detail}`
-      : novel.detail;
+    return `${novel.detail}, ${chapter.detail}`;
   }
   return steps.map(s => s.status).join('/');
 }
@@ -163,14 +166,27 @@ function renderTable(rows, generatedAt, lang, counts, skipped) {
   );
   lines.push('');
   lines.push(
-    `**${counts.total} checked** · ${ICON.PASS} ${counts.pass} passing · ${ICON.FAIL} ${counts.fail} failing · ${ICON.INCONCLUSIVE} ${counts.inconclusive} blocked or unreachable`,
+    `**${counts.total} checked** · ${ICON.PASS} ${counts.pass} passing · ${ICON.FAIL} ${counts.fail} failing · ${ICON.UNKNOWN} ${counts.unknown} undetermined`,
   );
   lines.push('');
   lines.push(
     `Last run: \`${generatedAt}\`. This is a committed snapshot, not a live badge —`,
     'a row reflects the site at that moment and can change without this page being',
-    'edited. Cloudflare-protected sites report ⚠️ rather than ❌ because a block is',
-    'not proof the scraper is broken.',
+    'edited.',
+  );
+  lines.push('');
+  lines.push(
+    '**Read the three states carefully.**',
+    '',
+    `- ${ICON.PASS} **PASS** — all four checks returned real data from a live request.`,
+    `- ${ICON.FAIL} **FAIL** — the checks ran and the plugin is broken. This is a real`,
+    '  defect worth an issue or a pull request.',
+    `- ${ICON.UNKNOWN} **UNKNOWN** — the runner never got through, so the plugin's health`,
+    '  was not determined. This is **not** a verdict on the plugin. GitHub Actions',
+    '  runners are datacentre IPs; large novel sites block or challenge them by',
+    '  policy. Plenty of sources in this state work normally in the app on a phone,',
+    '  and the app resolves some of them with its own Cloudflare handling. Treat',
+    '  UNKNOWN as "not measured", never as "broken".',
   );
   lines.push('');
   lines.push('| Source | Site | Health | Detail |');
@@ -268,8 +284,9 @@ async function main() {
     };
   });
 
-  // Healthy first, then blocked, then broken - the order a reader cares about.
-  const rank = { PASS: 0, INCONCLUSIVE: 1, FAIL: 2 };
+  // Healthy first, then broken, then undetermined - proven facts before
+  // unmeasured rows, so the table cannot be skimmed into a pile of accusations.
+  const rank = { PASS: 0, FAIL: 1, UNKNOWN: 2 };
   rows.sort(
     (a, b) =>
       rank[a.verdict] - rank[b.verdict] ||
@@ -280,7 +297,7 @@ async function main() {
     total: rows.length,
     pass: rows.filter(r => r.verdict === 'PASS').length,
     fail: rows.filter(r => r.verdict === 'FAIL').length,
-    inconclusive: rows.filter(r => r.verdict === 'INCONCLUSIVE').length,
+    unknown: rows.filter(r => r.verdict === 'UNKNOWN').length,
   };
   const generatedAt =
     new Date().toISOString().replace('T', ' ').slice(0, 16) + ' UTC';
@@ -309,7 +326,7 @@ async function main() {
   }
 
   console.error(
-    `\n${counts.total} checked: ${counts.pass} pass, ${counts.fail} fail, ${counts.inconclusive} inconclusive`,
+    `\n${counts.total} checked: ${counts.pass} pass, ${counts.fail} fail, ${counts.unknown} undetermined`,
   );
 }
 

@@ -22,7 +22,38 @@ const STEP_TIMEOUT_MS = 30_000;
 const CLOUDFLARE_HEADER_HINTS = ['cf-ray', 'cf-cache-status', 'cf-request-id'];
 
 /**
- * Classify a thrown error as "the network/site blocked us" rather than
+ * Distinguish "the site is behind Cloudflare's CDN" from "Cloudflare blocked
+ * us". These are not the same and conflating them produces false accusations.
+ *
+ * Every Cloudflare-fronted site serves cf-ray and cf-cache-status on perfectly
+ * healthy responses, because those headers describe the CDN edge, not a
+ * challenge. novelping.com, novelarchive.cc and a large share of the catalogue
+ * sit behind Cloudflare and return 200 with both headers present.
+ *
+ * A block looks different: 403/503 *plus* cf-mitigated: challenge, or a
+ * cf-ray with no cf-cache-status (a challenged response is not cacheable).
+ */
+function describeBlock(status, headers) {
+  const get = name => {
+    const v = headers?.get?.(name) ?? headers?.[name];
+    return typeof v === 'string' ? v : undefined;
+  };
+  const mit = get('cf-mitigated');
+  const reason = get('cf-chl-bypass') ? undefined : undefined;
+  if (mit) return `${status} blocked by Cloudflare (cf-mitigated: ${mit})`;
+  if (reason) return `${status} blocked by Cloudflare`;
+  // 403/503 on a Cloudflare-fronted host with no cache-status is the classic
+  // challenge fingerprint. Say "edge challenge" rather than asserting the
+  // plugin is at fault: the request may simply have come from a blocked region.
+  const cfHeaders = CLOUDFLARE_HEADER_HINTS.some(h => get(h) !== undefined);
+  if (cfHeaders) {
+    return `${status} Cloudflare edge challenge (bot rule)`;
+  }
+  return `${status} (likely anti-bot block)`;
+}
+
+/**
+ * Classify a thrown error as "the network or the site blocked us" rather than
  * "the plugin is broken". Only 403/503 count as a block: a cf-ray or
  * cf-cache-status header alone just means the site sits behind Cloudflare's
  * CDN, which is true of a large share of the web and proves nothing.
@@ -30,7 +61,12 @@ const CLOUDFLARE_HEADER_HINTS = ['cf-ray', 'cf-cache-status', 'cf-request-id'];
 export function isNetworkOrBlockError(error) {
   const code = error?.code || error?.cause?.code;
   const message = String(error?.message || '');
-  if (['ENOTFOUND', 'ECONNREFUSED', 'ECONNRESET', 'ETIMEDOUT'].includes(code)) {
+  if (code === 'ENOTFOUND' || code === 'EAI_AGAIN') {
+    // DNS could not resolve. That is a fact about the site or this network's
+    // resolver - it is not evidence about the scraper either way.
+    return { inconclusive: true, reason: `DNS lookup failed (${code})` };
+  }
+  if (['ECONNREFUSED', 'ECONNRESET', 'ETIMEDOUT'].includes(code)) {
     return { inconclusive: true, reason: `Network error (${code})` };
   }
   if (/timed? ?out/i.test(message)) {
@@ -39,19 +75,9 @@ export function isNetworkOrBlockError(error) {
   const status = error?.response?.status ?? error?.status;
   if (status === 403 || status === 503) {
     const headers = error?.response?.headers;
-    const headerKeys = headers
-      ? Object.keys(
-          typeof headers.entries === 'function'
-            ? Object.fromEntries(headers.entries())
-            : headers,
-        ).map(k => k.toLowerCase())
-      : [];
-    const isCloudflare = CLOUDFLARE_HEADER_HINTS.some(h =>
-      headerKeys.includes(h),
-    );
     return {
       inconclusive: true,
-      reason: `HTTP ${status}${isCloudflare ? ' (Cloudflare)' : ' (likely anti-bot block)'}`,
+      reason: describeBlock(status, headers),
     };
   }
   return { inconclusive: false };
@@ -285,11 +311,10 @@ async function probeSiteReachability(site) {
   if (res.status >= 200 && res.status < 400) {
     return { reachable: true };
   }
-  const isCloudflare = CLOUDFLARE_HEADER_HINTS.some(h => res.headers.has(h));
   if (res.status === 403 || res.status === 503) {
     return {
       reachable: false,
-      reason: `HTTP ${res.status}${isCloudflare ? ' (Cloudflare)' : ''}`,
+      reason: describeBlock(res.status, res.headers),
     };
   }
   return { reachable: false, reason: `HTTP ${res.status}` };
