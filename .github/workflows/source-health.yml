@@ -1,0 +1,129 @@
+name: Source Health
+
+# Live-checks every shipped English plugin against its real site and rewrites
+# the "Source health" table in README.md between the SOURCE_HEALTH markers.
+#
+# The table is a committed snapshot rather than a badge fetched at render time:
+# a badge would break silently if this workflow stopped running, and there would
+# be no record of when the numbers were last true. A committed table with a
+# timestamp ages visibly in the git history instead.
+#
+# The job never fails on plugin health. A scraper breaking is normal and is
+# reported by the table, not by a red build - failing here would train everyone
+# to ignore the workflow, and would block unrelated plugin work. It fails only
+# if the harness itself cannot run.
+
+on:
+  schedule:
+    # 04:17 UTC daily. An off-minute avoids the top-of-hour GitHub Actions
+    # scheduling congestion that delays scheduled runs.
+    - cron: '17 4 * * *'
+  workflow_dispatch:
+    inputs:
+      lang:
+        description: 'Language directory to check'
+        required: false
+        default: 'english'
+        type: choice
+        options:
+          - english
+          - arabic
+          - chinese
+          - french
+          - indonesian
+          - japanese
+          - korean
+          - multi
+          - polish
+          - portuguese
+          - russian
+          - spanish
+          - thai
+          - turkish
+          - ukrainian
+          - vietnamese
+      concurrency:
+        description: 'Parallel site checks'
+        required: false
+        default: '8'
+        type: string
+
+concurrency:
+  group: source-health
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    name: Live source health
+    runs-on: ubuntu-latest
+    # 164 English plugins at concurrency 8 takes ~7 minutes locally. Allow
+    # generous headroom for slower runner networking plus per-site 30s timeouts.
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          # Matches the repository's documented minimum (Node >= 22) and the
+          # esbuild target used by the live checker.
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Live Checks
+        id: health
+        env:
+          LANG_DIR: ${{ github.event_name == 'workflow_dispatch' && inputs.lang || 'english' }}
+          CONCURRENCY: ${{ github.event_name == 'workflow_dispatch' && inputs.concurrency || '8' }}
+        run: |
+          set -uo pipefail
+          node scripts/source-health-table.js \
+            --lang "${LANG_DIR}" \
+            --concurrency "${CONCURRENCY}" \
+            2>&1 | tee health-output.txt
+          # The generator resolves plugin metadata and always exits 0 even when
+          # individual plugins fail, so a non-zero status here means the harness
+          # itself broke (bad arguments, missing directory, write failure).
+          status=${PIPESTATUS[0]}
+          echo "exit_code=${status}" >> "$GITHUB_OUTPUT"
+          if [ "${status}" != "0" ]; then
+            echo "::error::source-health-table.js exited ${status} - harness failure, not a plugin health issue."
+          fi
+
+      - name: Summarise Results
+        if: always()
+        run: |
+          {
+            echo "## Source health run"
+            echo
+            echo '```'
+            cat health-output.txt 2>/dev/null || echo "(no output captured)"
+            echo '```'
+            echo
+            cat README.md | sed -n '/SOURCE_HEALTH:START/,/SOURCE_HEALTH:END/p'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit Updated Table
+        if: steps.health.outputs.exit_code == '0'
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- README.md; then
+            echo "Health table unchanged - nothing to commit."
+            exit 0
+          fi
+          git config user.name  'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add README.md
+          git commit -m 'docs: refresh source health table'
+          # Push to the triggering ref. On schedule this is the default branch;
+          # on workflow_dispatch it may be a feature branch, where pushing is
+          # still correct so the run's own change is not silently discarded.
+          git push origin "HEAD:${GITHUB_REF_NAME}"

@@ -8,6 +8,15 @@
 
 Community-driven plugin repository for [LNReader](https://github.com/LNReader/lnreader). This repository hosts plugins and manages related issues and requests.
 
+<!-- SOURCE_HEALTH:START -->
+
+## 📡 Source health
+
+Populated automatically by `.github/workflows/source-health.yml` on the first
+scheduled run.
+
+<!-- SOURCE_HEALTH:END -->
+
 ## Quick Start
 
 **Prerequisites:** Node.js >= 22
