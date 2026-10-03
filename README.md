@@ -18,18 +18,28 @@ Live check of every `english` plugin against its real site, run daily by
 Each plugin is exercised the way the app uses it: **popular → search → novel
 → chapter**. A plugin only counts as healthy if all four return real data.
 
-**63 checked** · ✅ 28 passing · ❌ 8 failing · ⚠️ 27 blocked or unreachable
+**63 checked** · ✅ 27 passing · ❌ 9 failing · ❔ 27 undetermined
 
-Last run: `2026-10-03 17:30 UTC`. This is a committed snapshot, not a live badge —
+Last run: `2026-10-03 17:45 UTC`. This is a committed snapshot, not a live badge —
 a row reflects the site at that moment and can change without this page being
-edited. Cloudflare-protected sites report ⚠️ rather than ❌ because a block is
-not proof the scraper is broken.
+edited.
+
+**Read the three states carefully.**
+
+- ✅ **PASS** — all four checks returned real data from a live request.
+- ❌ **FAIL** — the checks ran and the plugin is broken. This is a real
+  defect worth an issue or a pull request.
+- ❔ **UNKNOWN** — the runner never got through, so the plugin's health
+  was not determined. This is **not** a verdict on the plugin. GitHub Actions
+  runners are datacentre IPs; large novel sites block or challenge them by
+  policy. Plenty of sources in this state work normally in the app on a phone,
+  and the app resolves some of them with its own Cloudflare handling. Treat
+  UNKNOWN as "not measured", never as "broken".
 
 | Source | Site | Health | Detail |
 | --- | --- | :---: | --- |
 | **Baka-Tsuki** | https://www.baka-tsuki.org/project/ | ✅ PASS | 2 chapters, 254198 chars |
 | **Beast Novels** | https://beastnovels.com/ | ✅ PASS | 160 chapters, 17700 chars |
-| **Crimson Scrolls** | https://crimsonscrolls.net | ✅ PASS | 142 chapters, 13076 chars |
 | **Dreamy Translations** | https://dreamy-translations.com | ✅ PASS | 241 chapters, 10223 chars |
 | **Faq Wiki** | https://faqwiki.xyz | ✅ PASS | 402 chapters, 14317 chars |
 | **Firebird's Nest** | https://firebirdsnest.org | ✅ PASS | 3 chapters, 9181 chars |
@@ -55,41 +65,42 @@ not proof the scraper is broken.
 | **Web Novel Translation** | https://wntl.net/ | ✅ PASS | 556 chapters, 3689 chars |
 | **Witch Cult Translations** | https://witchculttranslation.com | ✅ PASS | 450 chapters, 30477 chars |
 | **Wuxia World** | https://www.wuxiaworld.com/ | ✅ PASS | 357 chapters, 8351 chars |
-| **Anime Anyway** | https://animeanyway.com/ | ⚠️ INCONCLUSIVE | HTTP 429 |
-| **Asianfanfics** | https://www.asianfanfics.com/ | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
-| **Chikari** | https://chikari.moe | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
-| **DaoTekno** | https://daotekno.com/ | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
-| **Dragonholic** | https://dragonholictranslations.com | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
-| **Dream Big Translations** | https://www.dreambigtl.com/ | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
-| **Empire Novel** | https://www.empirenovel.com/ | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
-| **Fenrir Realm** | https://fenrirealm.com | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
-| **Fiction Zone** | https://fictionzone.net | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
-| **Foxteller** | https://www.foxteller.com | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
-| **HangulPlanet** | https://hangulplanet.com | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
-| **Indra Translations** | https://indratranslations.com | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
-| **Inkitt** | https://www.inkitt.com | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
-| **Mynovels** | https://mynovels.su/ | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
-| **Novel Arrow** | https://novelarrow.com/ | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
-| **Novel Hall** | https://novelhall.com/ | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
-| **Novel Updates** | https://www.novelupdates.com/ | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
-| **Novelight** | https://novelight.net/ | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
-| **NovelPing** | https://novelping.com | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
-| **novelsOnline** | https://novelsonline.org | ⚠️ INCONCLUSIVE | HTTP 522 |
-| **PawRead** | https://m.pawread.com/ | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
-| **Rainofsnow** | https://rainofsnow.com/ | ⚠️ INCONCLUSIVE | fetch failed |
-| **Re:Library** | https://re-library.com | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
-| **Scribble Hub** | https://www.scribblehub.com/ | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
-| **StorySeedling** | https://storyseedling.com/ | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
-| **VyNovel** | https://vynovel.com | ⚠️ INCONCLUSIVE | Network error (ETIMEDOUT) |
-| **Webnovel** | https://www.webnovel.com | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
 | **Archive Of Our Own** | https://archiveofourown.org/ | ❌ FAIL | Returned no novels |
 | **Chrysanthemum Garden** | https://chrysanthemumgarden.com | ❌ FAIL | Returned no novels |
+| **Crimson Scrolls** | https://crimsonscrolls.net | ❌ FAIL | Returned no novels |
 | **Divine Dao Library** | https://www.divinedaolibrary.com/ | ❌ FAIL | Returned no novels |
 | **Genesis** | https://genesistudio.com | ❌ FAIL | Cannot read properties of undefined (reading 'chapter_content') |
 | **LightNovelWorld** | https://lightnovelworld.org/ | ❌ FAIL | Returned no novels |
 | **NovelBuddy** | https://novelbuddy.me/ | ❌ FAIL | Cannot read properties of undefined (reading 'items') |
-| **Skythewood Translations** | https://skythewood.blogspot.com | ❌ FAIL | Returned no novels |
+| **Skythewood Translations** | https://skythewood.blogspot.com | ❌ FAIL | Missing novel name |
 | **WTR-LAB** | https://wtr-lab.com/ | ❌ FAIL | None of the requested translations could be loaded [NOT signed in (get-session HTTP 200: null)]. The server returned no usable response. |
+| **Anime Anyway** | https://animeanyway.com/ | ❔ UNKNOWN | HTTP 429 |
+| **Asianfanfics** | https://www.asianfanfics.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **Chikari** | https://chikari.moe | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **DaoTekno** | https://daotekno.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **Dragonholic** | https://dragonholictranslations.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **Dream Big Translations** | https://www.dreambigtl.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **Empire Novel** | https://www.empirenovel.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **Fenrir Realm** | https://fenrirealm.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **Fiction Zone** | https://fictionzone.net | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **Foxteller** | https://www.foxteller.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **HangulPlanet** | https://hangulplanet.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **Indra Translations** | https://indratranslations.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **Inkitt** | https://www.inkitt.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **Mynovels** | https://mynovels.su/ | ❔ UNKNOWN | 403 Cloudflare edge challenge (bot rule) |
+| **Novel Arrow** | https://novelarrow.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **Novel Hall** | https://novelhall.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **Novel Updates** | https://www.novelupdates.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **Novelight** | https://novelight.net/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **NovelPing** | https://novelping.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **novelsOnline** | https://novelsonline.org | ❔ UNKNOWN | HTTP 522 |
+| **PawRead** | https://m.pawread.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **Rainofsnow** | https://rainofsnow.com/ | ❔ UNKNOWN | fetch failed |
+| **Re:Library** | https://re-library.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **Scribble Hub** | https://www.scribblehub.com/ | ❔ UNKNOWN | 403 Cloudflare edge challenge (bot rule) |
+| **StorySeedling** | https://storyseedling.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **VyNovel** | https://vynovel.com | ❔ UNKNOWN | Network error (ETIMEDOUT) |
+| **Webnovel** | https://www.webnovel.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 
 Not listed: 5 marked `.broken.ts` (deliberately unshipped).
 
