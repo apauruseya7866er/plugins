@@ -12,8 +12,92 @@ Community-driven plugin repository for [LNReader](https://github.com/LNReader/ln
 
 ## 📡 Source health
 
-Populated automatically by `.github/workflows/source-health.yml` on the first
-scheduled run.
+Live check of every `english` plugin against its real site, run daily by
+[`.github/workflows/source-health.yml`](./.github/workflows/source-health.yml).
+
+Each plugin is exercised the way the app uses it: **popular → search → novel
+→ chapter**. A plugin only counts as healthy if all four return real data.
+
+**63 checked** · ✅ 28 passing · ❌ 8 failing · ⚠️ 27 blocked or unreachable
+
+Last run: `2026-10-03 17:30 UTC`. This is a committed snapshot, not a live badge —
+a row reflects the site at that moment and can change without this page being
+edited. Cloudflare-protected sites report ⚠️ rather than ❌ because a block is
+not proof the scraper is broken.
+
+| Source | Site | Health | Detail |
+| --- | --- | :---: | --- |
+| **Baka-Tsuki** | https://www.baka-tsuki.org/project/ | ✅ PASS | 2 chapters, 254198 chars |
+| **Beast Novels** | https://beastnovels.com/ | ✅ PASS | 160 chapters, 17700 chars |
+| **Crimson Scrolls** | https://crimsonscrolls.net | ✅ PASS | 142 chapters, 13076 chars |
+| **Dreamy Translations** | https://dreamy-translations.com | ✅ PASS | 241 chapters, 10223 chars |
+| **Faq Wiki** | https://faqwiki.xyz | ✅ PASS | 402 chapters, 14317 chars |
+| **Firebird's Nest** | https://firebirdsnest.org | ✅ PASS | 3 chapters, 9181 chars |
+| **FuckNovelpia** | https://fucknovelpia.com/ | ✅ PASS | 69 chapters, 207 chars |
+| **iNovelTranslation** | https://inoveltranslation.com | ✅ PASS | 10 chapters, 12601 chars |
+| **Konkon** | https://konkon.ink | ✅ PASS | 100 chapters, 15094 chars |
+| **LeafStudio** | https://leafstudio.site/ | ✅ PASS | 2 chapters, 16568 chars |
+| **Light Novel Translations** | https://lightnovelstranslations.com/ | ✅ PASS | 94 chapters, 9626 chars |
+| **LnMTL** | https://lnmtl.com/ | ✅ PASS | 100 chapters, 14323 chars |
+| **LNORI** | https://lnori.com/ | ✅ PASS | 305 chapters, 336 chars |
+| **MVLEMPYR** | https://www.mvlempyr.io/ | ✅ PASS | 839 chapters, 6979 chars |
+| **Novel Archive** | https://novelarchive.cc | ✅ PASS | 3202 chapters, 11017 chars |
+| **Novel7s** | https://novel7s.com | ✅ PASS | 70 chapters, 12123 chars |
+| **NovelDex** | https://noveldex.io | ✅ PASS | 301 chapters, 7452 chars |
+| **NovelHi** | https://novelhi.com/ | ✅ PASS | 7464 chapters, 4406 chars |
+| **NovelRest** | https://novelrest.vercel.app | ✅ PASS | 12 chapters, 563 chars |
+| **Peach Puff Translations** | https://peachpuff.in/ | ✅ PASS | 114 chapters, 29998 chars |
+| **Puffin Folio** | https://www.puffinfolio.com/ | ✅ PASS | 68 chapters, 12408 chars |
+| **Read From Net** | https://readfrom.net/ | ✅ PASS | 17 chapters, 26953 chars |
+| **ReChapters** | https://www.rechapters.com | ✅ PASS | 1432 chapters, 10255 chars |
+| **Royal Road** | https://www.royalroad.com/ | ✅ PASS | 109 chapters, 54606 chars |
+| **We Tried TLS** | https://wetriedtls.com | ✅ PASS | 892 chapters, 10750 chars |
+| **Web Novel Translation** | https://wntl.net/ | ✅ PASS | 556 chapters, 3689 chars |
+| **Witch Cult Translations** | https://witchculttranslation.com | ✅ PASS | 450 chapters, 30477 chars |
+| **Wuxia World** | https://www.wuxiaworld.com/ | ✅ PASS | 357 chapters, 8351 chars |
+| **Anime Anyway** | https://animeanyway.com/ | ⚠️ INCONCLUSIVE | HTTP 429 |
+| **Asianfanfics** | https://www.asianfanfics.com/ | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
+| **Chikari** | https://chikari.moe | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
+| **DaoTekno** | https://daotekno.com/ | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
+| **Dragonholic** | https://dragonholictranslations.com | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
+| **Dream Big Translations** | https://www.dreambigtl.com/ | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
+| **Empire Novel** | https://www.empirenovel.com/ | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
+| **Fenrir Realm** | https://fenrirealm.com | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
+| **Fiction Zone** | https://fictionzone.net | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
+| **Foxteller** | https://www.foxteller.com | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
+| **HangulPlanet** | https://hangulplanet.com | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
+| **Indra Translations** | https://indratranslations.com | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
+| **Inkitt** | https://www.inkitt.com | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
+| **Mynovels** | https://mynovels.su/ | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
+| **Novel Arrow** | https://novelarrow.com/ | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
+| **Novel Hall** | https://novelhall.com/ | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
+| **Novel Updates** | https://www.novelupdates.com/ | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
+| **Novelight** | https://novelight.net/ | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
+| **NovelPing** | https://novelping.com | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
+| **novelsOnline** | https://novelsonline.org | ⚠️ INCONCLUSIVE | HTTP 522 |
+| **PawRead** | https://m.pawread.com/ | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
+| **Rainofsnow** | https://rainofsnow.com/ | ⚠️ INCONCLUSIVE | fetch failed |
+| **Re:Library** | https://re-library.com | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
+| **Scribble Hub** | https://www.scribblehub.com/ | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
+| **StorySeedling** | https://storyseedling.com/ | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
+| **VyNovel** | https://vynovel.com | ⚠️ INCONCLUSIVE | Network error (ETIMEDOUT) |
+| **Webnovel** | https://www.webnovel.com | ⚠️ INCONCLUSIVE | HTTP 403 (Cloudflare) |
+| **Archive Of Our Own** | https://archiveofourown.org/ | ❌ FAIL | Returned no novels |
+| **Chrysanthemum Garden** | https://chrysanthemumgarden.com | ❌ FAIL | Returned no novels |
+| **Divine Dao Library** | https://www.divinedaolibrary.com/ | ❌ FAIL | Returned no novels |
+| **Genesis** | https://genesistudio.com | ❌ FAIL | Cannot read properties of undefined (reading 'chapter_content') |
+| **LightNovelWorld** | https://lightnovelworld.org/ | ❌ FAIL | Returned no novels |
+| **NovelBuddy** | https://novelbuddy.me/ | ❌ FAIL | Cannot read properties of undefined (reading 'items') |
+| **Skythewood Translations** | https://skythewood.blogspot.com | ❌ FAIL | Returned no novels |
+| **WTR-LAB** | https://wtr-lab.com/ | ❌ FAIL | None of the requested translations could be loaded [NOT signed in (get-session HTTP 200: null)]. The server returned no usable response. |
+
+Not listed: 5 marked `.broken.ts` (deliberately unshipped).
+
+Reproduce a single row locally:
+
+```bash
+npm run check:plugin -- plugins/english/ao3.ts
+```
 
 <!-- SOURCE_HEALTH:END -->
 
