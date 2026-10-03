@@ -12,103 +12,90 @@ Community-driven plugin repository for [LNReader](https://github.com/LNReader/ln
 
 ## 📡 Source health
 
-Live check of every `english` plugin against its real site, run daily by
-[`.github/workflows/source-health.yml`](./.github/workflows/source-health.yml).
+[![Source health](https://apauruseya7866er.github.io/plugins/health.svg)](https://apauruseya7866er.github.io/plugins/)
 
-Each plugin is exercised the way the app uses it: **popular → search → novel
-→ chapter**. A plugin only counts as healthy if all four return real data.
+**[Live table with per-source detail →](https://apauruseya7866er.github.io/plugins/)**
 
-**63 checked** · ✅ 27 passing · ❌ 9 failing · ❔ 27 undetermined
+Every shipped English plugin is exercised against its real site the way the
+app uses it — **popular → search → novel → chapter** — and all four must
+return real data. Refreshed daily by
+[`source-health.yml`](./.github/workflows/source-health.yml).
 
-Last run: `2026-10-03 17:45 UTC`. This is a committed snapshot, not a live badge —
-a row reflects the site at that moment and can change without this page being
-edited.
+The badge and the linked page above are live: both are regenerated on every
+run. The table below is the same data as a committed snapshot, kept for
+plain `git` mirrors, search, and run-over-run diffing. **If the two ever
+disagree, the live page is current.**
 
-**Read the three states carefully.**
-
-- ✅ **PASS** — all four checks returned real data from a live request.
-- ❌ **FAIL** — the checks ran and the plugin is broken. This is a real
-  defect worth an issue or a pull request.
-- ❔ **UNKNOWN** — the runner never got through, so the plugin's health
-  was not determined. This is **not** a verdict on the plugin. GitHub Actions
-  runners are datacentre IPs; large novel sites block or challenge them by
-  policy. Plenty of sources in this state work normally in the app on a phone,
-  and the app resolves some of them with its own Cloudflare handling. Treat
-  UNKNOWN as "not measured", never as "broken".
+<details>
+<summary><strong>63 checked</strong> · ✅ 32 passing · ❌ 7 failing · ❔ 24 undetermined — expand for the snapshot</summary>
 
 | Source | Site | Health | Detail |
 | --- | --- | :---: | --- |
 | **Baka-Tsuki** | https://www.baka-tsuki.org/project/ | ✅ PASS | 2 chapters, 254198 chars |
 | **Beast Novels** | https://beastnovels.com/ | ✅ PASS | 160 chapters, 17700 chars |
-| **Dreamy Translations** | https://dreamy-translations.com | ✅ PASS | 241 chapters, 10223 chars |
+| **Chikari** | https://chikari.moe | ✅ PASS | 3203 chapters, 11048 chars |
+| **Crimson Scrolls** | https://crimsonscrolls.net | ✅ PASS | 142 chapters, 13076 chars |
+| **Dragonholic** | https://dragonholictranslations.com | ✅ PASS | 71 chapters, 13210 chars |
 | **Faq Wiki** | https://faqwiki.xyz | ✅ PASS | 402 chapters, 14317 chars |
+| **Fenrir Realm** | https://fenrirealm.com | ✅ PASS | 896 chapters, 18151 chars |
 | **Firebird's Nest** | https://firebirdsnest.org | ✅ PASS | 3 chapters, 9181 chars |
-| **FuckNovelpia** | https://fucknovelpia.com/ | ✅ PASS | 69 chapters, 207 chars |
+| **HangulPlanet** | https://hangulplanet.com | ✅ PASS | 181 chapters, 16059 chars |
+| **Indra Translations** | https://indratranslations.com | ✅ PASS | 101 chapters, 18526 chars |
 | **iNovelTranslation** | https://inoveltranslation.com | ✅ PASS | 10 chapters, 12601 chars |
 | **Konkon** | https://konkon.ink | ✅ PASS | 100 chapters, 15094 chars |
 | **LeafStudio** | https://leafstudio.site/ | ✅ PASS | 2 chapters, 16568 chars |
 | **Light Novel Translations** | https://lightnovelstranslations.com/ | ✅ PASS | 94 chapters, 9626 chars |
 | **LnMTL** | https://lnmtl.com/ | ✅ PASS | 100 chapters, 14323 chars |
 | **LNORI** | https://lnori.com/ | ✅ PASS | 305 chapters, 336 chars |
-| **MVLEMPYR** | https://www.mvlempyr.io/ | ✅ PASS | 839 chapters, 6979 chars |
 | **Novel Archive** | https://novelarchive.cc | ✅ PASS | 3202 chapters, 11017 chars |
 | **Novel7s** | https://novel7s.com | ✅ PASS | 70 chapters, 12123 chars |
 | **NovelDex** | https://noveldex.io | ✅ PASS | 301 chapters, 7452 chars |
 | **NovelHi** | https://novelhi.com/ | ✅ PASS | 7464 chapters, 4406 chars |
+| **Novelight** | https://novelight.net/ | ✅ PASS | 43 chapters, 12089 chars |
+| **NovelPing** | https://novelping.com | ✅ PASS | 30 chapters, 11198 chars |
 | **NovelRest** | https://novelrest.vercel.app | ✅ PASS | 12 chapters, 563 chars |
-| **Peach Puff Translations** | https://peachpuff.in/ | ✅ PASS | 114 chapters, 29998 chars |
+| **PawRead** | https://m.pawread.com/ | ✅ PASS | 914 chapters, 9012 chars |
 | **Puffin Folio** | https://www.puffinfolio.com/ | ✅ PASS | 68 chapters, 12408 chars |
-| **Read From Net** | https://readfrom.net/ | ✅ PASS | 17 chapters, 26953 chars |
 | **ReChapters** | https://www.rechapters.com | ✅ PASS | 1432 chapters, 10255 chars |
 | **Royal Road** | https://www.royalroad.com/ | ✅ PASS | 109 chapters, 54606 chars |
+| **StorySeedling** | https://storyseedling.com/ | ✅ PASS | 30 chapters, 36140 chars |
 | **We Tried TLS** | https://wetriedtls.com | ✅ PASS | 892 chapters, 10750 chars |
 | **Web Novel Translation** | https://wntl.net/ | ✅ PASS | 556 chapters, 3689 chars |
 | **Witch Cult Translations** | https://witchculttranslation.com | ✅ PASS | 450 chapters, 30477 chars |
 | **Wuxia World** | https://www.wuxiaworld.com/ | ✅ PASS | 357 chapters, 8351 chars |
-| **Archive Of Our Own** | https://archiveofourown.org/ | ❌ FAIL | Returned no novels |
 | **Chrysanthemum Garden** | https://chrysanthemumgarden.com | ❌ FAIL | Returned no novels |
-| **Crimson Scrolls** | https://crimsonscrolls.net | ❌ FAIL | Returned no novels |
 | **Divine Dao Library** | https://www.divinedaolibrary.com/ | ❌ FAIL | Returned no novels |
 | **Genesis** | https://genesistudio.com | ❌ FAIL | Cannot read properties of undefined (reading 'chapter_content') |
 | **LightNovelWorld** | https://lightnovelworld.org/ | ❌ FAIL | Returned no novels |
+| **Novel Arrow** | https://novelarrow.com/ | ❌ FAIL | Returned no novels |
 | **NovelBuddy** | https://novelbuddy.me/ | ❌ FAIL | Cannot read properties of undefined (reading 'items') |
-| **Skythewood Translations** | https://skythewood.blogspot.com | ❌ FAIL | Missing novel name |
 | **WTR-LAB** | https://wtr-lab.com/ | ❌ FAIL | None of the requested translations could be loaded [NOT signed in (get-session HTTP 200: null)]. The server returned no usable response. |
 | **Anime Anyway** | https://animeanyway.com/ | ❔ UNKNOWN | HTTP 429 |
+| **Archive Of Our Own** | https://archiveofourown.org/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 | **Asianfanfics** | https://www.asianfanfics.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
-| **Chikari** | https://chikari.moe | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 | **DaoTekno** | https://daotekno.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
-| **Dragonholic** | https://dragonholictranslations.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
-| **Dream Big Translations** | https://www.dreambigtl.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **Dream Big Translations** | https://www.dreambigtl.com/ | ❔ UNKNOWN | HTTP 530 |
+| **Dreamy Translations** | https://dreamy-translations.com | ❔ UNKNOWN | Network error (ETIMEDOUT) |
 | **Empire Novel** | https://www.empirenovel.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
-| **Fenrir Realm** | https://fenrirealm.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 | **Fiction Zone** | https://fictionzone.net | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 | **Foxteller** | https://www.foxteller.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
-| **HangulPlanet** | https://hangulplanet.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
-| **Indra Translations** | https://indratranslations.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
-| **Inkitt** | https://www.inkitt.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **FuckNovelpia** | https://fucknovelpia.com/ | ❔ UNKNOWN | DNS lookup failed (ENOTFOUND) |
+| **Inkitt** | https://www.inkitt.com | ❔ UNKNOWN | DNS lookup failed (ENOTFOUND) |
+| **MVLEMPYR** | https://www.mvlempyr.io/ | ❔ UNKNOWN | DNS lookup failed (ENOTFOUND) |
 | **Mynovels** | https://mynovels.su/ | ❔ UNKNOWN | 403 Cloudflare edge challenge (bot rule) |
-| **Novel Arrow** | https://novelarrow.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
-| **Novel Hall** | https://novelhall.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **Novel Hall** | https://novelhall.com/ | ❔ UNKNOWN | DNS lookup failed (ENOTFOUND) |
 | **Novel Updates** | https://www.novelupdates.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
-| **Novelight** | https://novelight.net/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
-| **NovelPing** | https://novelping.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
-| **novelsOnline** | https://novelsonline.org | ❔ UNKNOWN | HTTP 522 |
-| **PawRead** | https://m.pawread.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **novelsOnline** | https://novelsonline.org | ❔ UNKNOWN | DNS lookup failed (ENOTFOUND) |
+| **Peach Puff Translations** | https://peachpuff.in/ | ❔ UNKNOWN | DNS lookup failed (ENOTFOUND) |
 | **Rainofsnow** | https://rainofsnow.com/ | ❔ UNKNOWN | fetch failed |
 | **Re:Library** | https://re-library.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **Read From Net** | https://readfrom.net/ | ❔ UNKNOWN | DNS lookup failed (ENOTFOUND) |
 | **Scribble Hub** | https://www.scribblehub.com/ | ❔ UNKNOWN | 403 Cloudflare edge challenge (bot rule) |
-| **StorySeedling** | https://storyseedling.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
-| **VyNovel** | https://vynovel.com | ❔ UNKNOWN | Network error (ETIMEDOUT) |
+| **Skythewood Translations** | https://skythewood.blogspot.com | ❔ UNKNOWN | DNS lookup failed (ENOTFOUND) |
+| **VyNovel** | https://vynovel.com | ❔ UNKNOWN | DNS lookup failed (ENOTFOUND) |
 | **Webnovel** | https://www.webnovel.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 
-Not listed: 5 marked `.broken.ts` (deliberately unshipped).
-
-Reproduce a single row locally:
-
-```bash
-npm run check:plugin -- plugins/english/ao3.ts
-```
+</details>
 
 <!-- SOURCE_HEALTH:END -->
 

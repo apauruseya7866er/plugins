@@ -19,3 +19,11 @@ broken-sites-report.json
 .agents/
 .claude/
 .cursor/
+
+# Generated live-check output, republished by
+# .github/workflows/source-health.yml and served from GitHub Pages. Committing it
+# would add ~40 KB of regenerated JSON to history on every run for no benefit;
+# the README snapshot is the committed artefact. .nojekyll stays tracked because
+# GitHub Pages needs it to serve the JSON and SVG untouched.
+site/*
+!site/.nojekyll
