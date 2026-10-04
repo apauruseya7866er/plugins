@@ -5,15 +5,6 @@
     "sourceName": "Wuxiabox"
   },
   {
-    "id": "wuxiacity",
-    "sourceSite": "https://www.wuxiafox.com",
-    "sourceName": "Wuxiafox",
-    "options": {
-      "down": true,
-      "downSince": 1768289212969
-    }
-  },
-  {
     "id": "ltnovel",
     "sourceSite": "https://www.ltnovels.com",
     "sourceName": "Ltnovel",
@@ -43,15 +34,6 @@
     "sourceName": "Wuxia Space",
     "options": {
       "versionIncrements": 1
-    }
-  },
-  {
-    "id": "wuxiav",
-    "sourceSite": "https://www.wuxiav.com",
-    "sourceName": "WuxiaV",
-    "options": {
-      "down": true,
-      "downSince": 1768289212940
     }
   }
 ]
