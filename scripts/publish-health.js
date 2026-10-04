@@ -25,6 +25,7 @@ import {
   summarise,
   ICON,
 } from './lib/health-shared.js';
+import { renderSummaryBadge } from './lib/health-badge.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -44,46 +45,6 @@ function cell(value) {
     .replaceAll('|', '\\|')
     .replace(/\r?\n/g, ' ')
     .trim();
-}
-
-const VERDICT_LABEL = {
-  PASS: 'passing',
-  FAIL: 'failing',
-  UNKNOWN: 'undetermined',
-};
-
-const VERDICT_COLOR = {
-  PASS: '#3fb950',
-  FAIL: '#f85149',
-  UNKNOWN: '#8b949e',
-};
-
-/** Summary badge: "<passing>/<total> passing", coloured by the worst verdict. */
-function renderSummaryBadge(counts) {
-  const worst =
-    counts.fail > 0 ? 'FAIL' : counts.unknown > 0 ? 'UNKNOWN' : 'PASS';
-  const label = VERDICT_LABEL[worst];
-  const value = `${counts.pass}/${counts.total}`;
-  const w = 8 + label.length * 7;
-  const totalW = w + value.length * 8 + 20;
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${totalW}" height="20" role="img" aria-label="${label}: ${value}">
-  <title>${label}: ${value}</title>
-  <linearGradient id="s" x2="0" y2="100%">
-    <stop offset="0" stop-color="#bbb" stop-opacity=".1"/>
-    <stop offset="1" stop-opacity=".1"/>
-  </linearGradient>
-  <clipPath id="r"><rect width="${totalW}" height="20" rx="3" fill="#fff"/></clipPath>
-  <g clip-path="url(#r)">
-    <rect width="${w}" height="20" fill="#555"/>
-    <rect x="${w}" width="${totalW - w}" height="20" fill="${VERDICT_COLOR[worst]}"/>
-    <rect width="${totalW}" height="20" fill="url(#s)"/>
-  </g>
-  <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="11">
-    <text x="${w / 2}" y="14">${label}</text>
-    <text x="${w + (totalW - w) / 2}" y="14">${value}</text>
-  </g>
-</svg>
-`;
 }
 
 /**
