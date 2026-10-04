@@ -70,6 +70,10 @@ permissions:
   # "Unable to get ACTIONS_ID_TOKEN_REQUEST_URL" and Pages silently never
   # publishes, which leaves the README badge and live table 404ing.
   id-token: write
+  # pages: create the deployment record itself. Without it deploy-pages fails
+  # with a 403 "Resource not accessible by integration" even once the OIDC token
+  # is available.
+  pages: write
 
 jobs:
   check:
