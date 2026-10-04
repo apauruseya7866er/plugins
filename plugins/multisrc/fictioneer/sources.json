@@ -85,5 +85,14 @@
         "novelSummary": "div.illusia-single-story__description"
       }
     }
+  },
+  {
+    "id": "asianovel",
+    "sourceSite": "https://www.asianovel.net",
+    "sourceName": "Asianovel",
+    "options": {
+      "browsePage": "stories"
+    }
   }
+
 ]
