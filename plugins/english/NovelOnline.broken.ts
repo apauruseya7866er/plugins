@@ -1,3 +1,6 @@
+// Marked .broken.ts on 2026-10-04: novelsonline.org - no DNS A record (NXDOMAIN via public resolver); dead.
+// Retained per the .broken.ts convention rather than deleted. Restore
+// the name and bump `version` if the site ever returns.
 import { CheerioAPI, load as parseHTML } from 'cheerio';
 import { fetchApi, FetchInit } from '@libs/fetch';
 import { Plugin } from '@/types/plugin';

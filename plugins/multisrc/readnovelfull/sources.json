@@ -61,16 +61,6 @@
     }
   },
   {
-    "id": "anf.net",
-    "sourceSite": "https://novgo.net/",
-    "sourceName": "AllNovelFull",
-    "options": {
-      "latestPage": "latest-release-novel",
-      "searchPage": "search",
-      "chapterListing": "ajax-chapter-option"
-    }
-  },
-  {
     "id": "novelbin",
     "sourceSite": "https://novelbin.com/",
     "sourceName": "Novel Bin",

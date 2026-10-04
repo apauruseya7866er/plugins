@@ -25,14 +25,6 @@
     }
   },
   {
-    "id": "1stkissnovel",
-    "sourceSite": "https://1stkissnovel.org/",
-    "sourceName": "FirstKissNovel",
-    "options": {
-      "useNewChapterEndpoint": true
-    }
-  },
-  {
     "id": "daonovel",
     "sourceSite": "https://daonovel.co/",
     "sourceName": "DaoNovel",

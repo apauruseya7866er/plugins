@@ -1,3 +1,6 @@
+// Marked .broken.ts on 2026-10-04: chrysanthemumgarden.com - site serves a cease-and-desist shutdown notice: "RIDI's content is being deleted and chrysanthemumgarden.com is shutting down due to a Cease & Desist Notice from RIDI Corporation"; dead.
+// Retained per the .broken.ts convention rather than deleted. Restore
+// the name and bump `version` if the site ever returns.
 import { fetchApi } from '@libs/fetch';
 import { Plugin } from '@/types/plugin';
 import { Filters } from '@libs/filterInputs';

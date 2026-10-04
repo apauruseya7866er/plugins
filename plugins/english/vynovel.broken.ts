@@ -1,3 +1,6 @@
+// Marked .broken.ts on 2026-10-04: vynovel.com - no DNS A record (NXDOMAIN via public resolver); dead.
+// Retained per the .broken.ts convention rather than deleted. Restore
+// the name and bump `version` if the site ever returns.
 import { Plugin } from '@/types/plugin';
 import { FilterTypes, Filters } from '@libs/filterInputs';
 import { defaultCover } from '@libs/defaultCover';
