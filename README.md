@@ -27,15 +27,16 @@ plain `git` mirrors, search, and run-over-run diffing. **If the two ever
 disagree, the live page is current.**
 
 <details>
-<summary><strong>60 checked</strong> · ✅ 27 passing · ❌ 8 failing · ❔ 25 undetermined — expand for the snapshot</summary>
+<summary><strong>60 checked</strong> · ✅ 28 passing · ❌ 5 failing · ❔ 27 undetermined — expand for the snapshot</summary>
 
 | Source | Site | Health | Detail |
 | --- | --- | :---: | --- |
 | **Baka-Tsuki** | https://www.baka-tsuki.org/project/ | ✅ PASS | 2 chapters, 254198 chars |
 | **Beast Novels** | https://beastnovels.com/ | ✅ PASS | 160 chapters, 17700 chars |
+| **Crimson Scrolls** | https://crimsonscrolls.net | ✅ PASS | 142 chapters, 13076 chars |
 | **Dreamy Translations** | https://dreamy-translations.com | ✅ PASS | 241 chapters, 10223 chars |
 | **Faq Wiki** | https://faqwiki.xyz | ✅ PASS | 402 chapters, 14317 chars |
-| **Firebird's Nest** | https://firebirdsnest.org | ✅ PASS | 3 chapters, 9181 chars |
+| **Firebird's Nest** | https://firebirdsnest.org | ✅ PASS | 133 chapters, 18894 chars |
 | **FuckNovelpia** | https://fucknovelpia.com/ | ✅ PASS | 69 chapters, 207 chars |
 | **iNovelTranslation** | https://inoveltranslation.com | ✅ PASS | 10 chapters, 12601 chars |
 | **Konkon** | https://konkon.ink | ✅ PASS | 150 chapters, 3772 chars |
@@ -53,20 +54,18 @@ disagree, the live page is current.**
 | **Puffin Folio** | https://www.puffinfolio.com/ | ✅ PASS | 68 chapters, 12408 chars |
 | **Read From Net** | https://readfrom.net/ | ✅ PASS | 17 chapters, 26953 chars |
 | **ReChapters** | https://www.rechapters.com | ✅ PASS | 1432 chapters, 10255 chars |
-| **Royal Road** | https://www.royalroad.com/ | ✅ PASS | 109 chapters, 54606 chars |
+| **Skythewood Translations** | https://skythewood.blogspot.com | ✅ PASS | 8 chapters, 335594 chars |
 | **We Tried TLS** | https://wetriedtls.com | ✅ PASS | 892 chapters, 10750 chars |
 | **Web Novel Translation** | https://wntl.net/ | ✅ PASS | 556 chapters, 3689 chars |
 | **Witch Cult Translations** | https://witchculttranslation.com | ✅ PASS | 450 chapters, 30477 chars |
 | **Wuxia World** | https://www.wuxiaworld.com/ | ✅ PASS | 357 chapters, 8351 chars |
-| **Archive Of Our Own** | https://archiveofourown.org/ | ❌ FAIL | Returned no novels |
-| **Crimson Scrolls** | https://crimsonscrolls.net | ❌ FAIL | Returned no novels |
 | **Divine Dao Library** | https://www.divinedaolibrary.com/ | ❌ FAIL | Returned no novels |
 | **Genesis** | https://genesistudio.com | ❌ FAIL | Cannot read properties of undefined (reading 'chapter_content') |
 | **LightNovelWorld** | https://lightnovelworld.org/ | ❌ FAIL | Returned no novels |
 | **NovelBuddy** | https://novelbuddy.me/ | ❌ FAIL | Cannot read properties of undefined (reading 'items') |
-| **Skythewood Translations** | https://skythewood.blogspot.com | ❌ FAIL | Returned no novels |
 | **WTR-LAB** | https://wtr-lab.com/ | ❌ FAIL | None of the requested translations could be loaded [NOT signed in (get-session HTTP 200: null)]. The server returned no usable response. |
 | **Anime Anyway** | https://animeanyway.com/ | ❔ UNKNOWN | HTTP 429 |
+| **Archive Of Our Own** | https://archiveofourown.org/ | ❔ UNKNOWN | Network error (ETIMEDOUT) |
 | **Asianfanfics** | https://www.asianfanfics.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 | **Chikari** | https://chikari.moe | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 | **DaoTekno** | https://daotekno.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
@@ -88,6 +87,7 @@ disagree, the live page is current.**
 | **PawRead** | https://m.pawread.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 | **Rainofsnow** | https://rainofsnow.com/ | ❔ UNKNOWN | fetch failed |
 | **Re:Library** | https://re-library.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **Royal Road** | https://www.royalroad.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 | **Scribble Hub** | https://www.scribblehub.com/ | ❔ UNKNOWN | 403 Cloudflare edge challenge (bot rule) |
 | **StorySeedling** | https://storyseedling.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 | **Webnovel** | https://www.webnovel.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
