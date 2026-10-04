@@ -63,7 +63,13 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
+  # contents: push the refreshed README snapshot.
   contents: write
+  # id-token: actions/deploy-pages mints a short-lived OIDC token to prove this
+  # job is allowed to deploy. Without it the deploy step fails with
+  # "Unable to get ACTIONS_ID_TOKEN_REQUEST_URL" and Pages silently never
+  # publishes, which leaves the README badge and live table 404ing.
+  id-token: write
 
 jobs:
   check:
@@ -115,8 +121,23 @@ jobs:
           echo "counts=${counts}" >> "$GITHUB_OUTPUT"
           echo "generated_at=${stamp}" >> "$GITHUB_OUTPUT"
 
-      - name: Refresh the README Snapshot
+      - name: Upload Pages Artifact
         if: steps.publish.outputs.exit_code == '0'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      # Deploy before the README is committed. The snapshot advertises the Pages
+      # URL for the badge and the live table, so committing it first would point
+      # readers at an artefact that does not exist yet - exactly how the badge
+      # 404ed on the first run.
+      - name: Deploy to GitHub Pages
+        if: steps.publish.outputs.exit_code == '0'
+        uses: actions/deploy-pages@v4
+        id: deployment
+
+      - name: Refresh the README Snapshot
+        if: steps.publish.outputs.exit_code == '0' && steps.deployment.outcome == 'success'
         run: |
           set -euo pipefail
           # The snapshot is spliced from the same JSON the live page reads, so the
@@ -131,7 +152,7 @@ jobs:
           git diff --stat -- README.md || true
 
       - name: Commit Snapshot
-        if: steps.publish.outputs.exit_code == '0'
+        if: steps.publish.outputs.exit_code == '0' && steps.deployment.outcome == 'success'
         run: |
           set -euo pipefail
           if git diff --quiet -- README.md; then
@@ -143,17 +164,6 @@ jobs:
             git commit -m 'docs: refresh source health snapshot'
             git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
-
-      - name: Upload Pages Artifact
-        if: steps.publish.outputs.exit_code == '0'
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: site
-
-      - name: Deploy to GitHub Pages
-        if: steps.publish.outputs.exit_code == '0'
-        uses: actions/deploy-pages@v4
-        id: deployment
 
       - name: Summarise Results
         if: always()
