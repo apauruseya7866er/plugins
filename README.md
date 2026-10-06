@@ -27,21 +27,20 @@ plain `git` mirrors, search, and run-over-run diffing. **If the two ever
 disagree, the live page is current.**
 
 <details>
-<summary><strong>60 checked</strong> · ✅ 28 passing · ❌ 5 failing · ❔ 27 undetermined — expand for the snapshot</summary>
+<summary><strong>60 checked</strong> · ✅ 27 passing · ❌ 7 failing · ❔ 26 undetermined — expand for the snapshot</summary>
 
 | Source | Site | Health | Detail |
 | --- | --- | :---: | --- |
 | **Baka-Tsuki** | https://www.baka-tsuki.org/project/ | ✅ PASS | 2 chapters, 254198 chars |
-| **Beast Novels** | https://beastnovels.com/ | ✅ PASS | 170 chapters, 17700 chars |
-| **Crimson Scrolls** | https://crimsonscrolls.net | ✅ PASS | 142 chapters, 13076 chars |
+| **Beast Novels** | https://beastnovels.com/ | ✅ PASS | 175 chapters, 17700 chars |
+| **Chikari** | https://chikari.moe | ✅ PASS | 3205 chapters, 11048 chars |
 | **Dreamy Translations** | https://dreamy-translations.com | ✅ PASS | 241 chapters, 10223 chars |
 | **Faq Wiki** | https://faqwiki.xyz | ✅ PASS | 402 chapters, 14317 chars |
 | **Firebird's Nest** | https://firebirdsnest.org | ✅ PASS | 133 chapters, 18894 chars |
 | **FuckNovelpia** | https://fucknovelpia.com/ | ✅ PASS | 69 chapters, 207 chars |
-| **iNovelTranslation** | https://inoveltranslation.com | ✅ PASS | 11 chapters, 12601 chars |
-| **Konkon** | https://konkon.ink | ✅ PASS | 129 chapters, 6093 chars |
-| **LeafStudio** | https://leafstudio.site/ | ✅ PASS | 10 chapters, 16568 chars |
-| **Light Novel Translations** | https://lightnovelstranslations.com/ | ✅ PASS | 94 chapters, 9626 chars |
+| **iNovelTranslation** | https://inoveltranslation.com | ✅ PASS | 12 chapters, 12601 chars |
+| **Konkon** | https://konkon.ink | ✅ PASS | 71 chapters, 7242 chars |
+| **Light Novel Translations** | https://lightnovelstranslations.com/ | ✅ PASS | 95 chapters, 9603 chars |
 | **LnMTL** | https://lnmtl.com/ | ✅ PASS | 100 chapters, 14323 chars |
 | **LNORI** | https://lnori.com/ | ✅ PASS | 305 chapters, 336 chars |
 | **MVLEMPYR** | https://www.mvlempyr.io/ | ✅ PASS | 839 chapters, 6979 chars |
@@ -56,18 +55,19 @@ disagree, the live page is current.**
 | **ReChapters** | https://www.rechapters.com | ✅ PASS | 1432 chapters, 10255 chars |
 | **Skythewood Translations** | https://skythewood.blogspot.com | ✅ PASS | 8 chapters, 335594 chars |
 | **We Tried TLS** | https://wetriedtls.com | ✅ PASS | 892 chapters, 10750 chars |
-| **Web Novel Translation** | https://wntl.net/ | ✅ PASS | 556 chapters, 3689 chars |
+| **Web Novel Translation** | https://wntl.net/ | ✅ PASS | 561 chapters, 3689 chars |
 | **Witch Cult Translations** | https://witchculttranslation.com | ✅ PASS | 450 chapters, 30477 chars |
 | **Wuxia World** | https://www.wuxiaworld.com/ | ✅ PASS | 357 chapters, 8351 chars |
+| **Crimson Scrolls** | https://crimsonscrolls.net | ❌ FAIL | Returned no novels |
 | **Divine Dao Library** | https://www.divinedaolibrary.com/ | ❌ FAIL | Returned no novels |
 | **Genesis** | https://genesistudio.com | ❌ FAIL | Cannot read properties of undefined (reading 'chapter_content') |
+| **LeafStudio** | https://leafstudio.site/ | ❌ FAIL | No chapters returned |
 | **LightNovelWorld** | https://lightnovelworld.org/ | ❌ FAIL | Returned no novels |
 | **NovelBuddy** | https://novelbuddy.me/ | ❌ FAIL | Cannot read properties of undefined (reading 'items') |
 | **WTR-LAB** | https://wtr-lab.com/ | ❌ FAIL | None of the requested translations could be loaded [NOT signed in (get-session HTTP 200: null)]. The server returned no usable response. |
 | **Anime Anyway** | https://animeanyway.com/ | ❔ UNKNOWN | HTTP 429 |
 | **Archive Of Our Own** | https://archiveofourown.org/ | ❔ UNKNOWN | Network error (ETIMEDOUT) |
 | **Asianfanfics** | https://www.asianfanfics.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
-| **Chikari** | https://chikari.moe | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 | **DaoTekno** | https://daotekno.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 | **Dragonholic** | https://dragonholictranslations.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 | **Dream Big Translations** | https://www.dreambigtl.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
