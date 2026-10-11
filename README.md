@@ -34,13 +34,13 @@ disagree, the live page is current.**
 | **Archive Of Our Own** | https://archiveofourown.org/ | ✅ PASS | 188 chapters, 11864 chars |
 | **Baka-Tsuki** | https://www.baka-tsuki.org/project/ | ✅ PASS | 2 chapters, 254198 chars |
 | **Beast Novels** | https://beastnovels.com/ | ✅ PASS | 190 chapters, 17700 chars |
-| **Chikari** | https://chikari.moe | ✅ PASS | 3210 chapters, 11048 chars |
+| **Chikari** | https://chikari.moe | ✅ PASS | 3211 chapters, 11048 chars |
 | **Dreamy Translations** | https://dreamy-translations.com | ✅ PASS | 241 chapters, 10223 chars |
 | **Faq Wiki** | https://faqwiki.xyz | ✅ PASS | 402 chapters, 14317 chars |
-| **Firebird's Nest** | https://firebirdsnest.org | ✅ PASS | 133 chapters, 18894 chars |
-| **iNovelTranslation** | https://inoveltranslation.com | ✅ PASS | 15 chapters, 12601 chars |
-| **Konkon** | https://konkon.ink | ✅ PASS | 480 chapters, 11136 chars |
-| **LeafStudio** | https://leafstudio.site/ | ✅ PASS | 11 chapters, 16605 chars |
+| **Firebird's Nest** | https://firebirdsnest.org | ✅ PASS | 3 chapters, 9181 chars |
+| **iNovelTranslation** | https://inoveltranslation.com | ✅ PASS | 16 chapters, 12601 chars |
+| **Konkon** | https://konkon.ink | ✅ PASS | 193 chapters, 7252 chars |
+| **LeafStudio** | https://leafstudio.site/ | ✅ PASS | 12 chapters, 16605 chars |
 | **LnMTL** | https://lnmtl.com/ | ✅ PASS | 100 chapters, 14323 chars |
 | **LNORI** | https://lnori.com/ | ✅ PASS | 305 chapters, 336 chars |
 | **MVLEMPYR** | https://www.mvlempyr.io/ | ✅ PASS | 839 chapters, 6979 chars |
@@ -65,7 +65,7 @@ disagree, the live page is current.**
 | **NovelBuddy** | https://novelbuddy.me/ | ❌ FAIL | Cannot read properties of undefined (reading 'items') |
 | **Skythewood Translations** | https://skythewood.blogspot.com | ❌ FAIL | Returned no novels |
 | **WTR-LAB** | https://wtr-lab.com/ | ❌ FAIL | None of the requested translations could be loaded [NOT signed in (get-session HTTP 200: null)]. The server returned no usable response. |
-| **Anime Anyway** | https://animeanyway.com/ | ❔ UNKNOWN | HTTP 429 |
+| **Anime Anyway** | https://animeanyway.com/ | ❔ UNKNOWN | HTTP 402 |
 | **Asianfanfics** | https://www.asianfanfics.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 | **DaoTekno** | https://daotekno.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 | **Dragonholic** | https://dragonholictranslations.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
