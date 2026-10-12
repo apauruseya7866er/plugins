@@ -91,6 +91,12 @@ class NovelArchive implements Plugin.PluginBase {
     if (value === 'completed' || value === 'finished') {
       return NovelStatus.Completed;
     }
+    // Hiatus is its own status, not a flavour of "ongoing". Folding it into
+    // Ongoing (or letting it fall through to Unknown) tells a reader a novel
+    // that stopped updating is still being written.
+    if (value === 'hiatus' || value === 'paused' || value === 'on hiatus') {
+      return NovelStatus.OnHiatus;
+    }
     if (value === 'ongoing' || value === 'releasing') {
       return NovelStatus.Ongoing;
     }
