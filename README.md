@@ -27,7 +27,7 @@ plain `git` mirrors, search, and run-over-run diffing. **If the two ever
 disagree, the live page is current.**
 
 <details>
-<summary><strong>66 checked</strong> · ✅ 32 passing · ❌ 6 failing · ❔ 28 undetermined — expand for the snapshot</summary>
+<summary><strong>66 checked</strong> · ✅ 31 passing · ❌ 7 failing · ❔ 28 undetermined — expand for the snapshot</summary>
 
 | Source | Site | Health | Detail |
 | --- | --- | :---: | --- |
@@ -35,34 +35,34 @@ disagree, the live page is current.**
 | **Asura Scans** | https://asurascans.com | ✅ PASS | 3160 chapters, 11143 chars |
 | **Baka-Tsuki** | https://www.baka-tsuki.org/project/ | ✅ PASS | 2 chapters, 254198 chars |
 | **Beast Novels** | https://beastnovels.com/ | ✅ PASS | 876 chapters, 17700 chars |
-| **Chikari** | https://chikari.moe | ✅ PASS | 3225 chapters, 11048 chars |
-| **Crimson Scrolls** | https://crimsonscrolls.net | ✅ PASS | 13 chapters, 19699 chars |
+| **Crimson Scrolls** | https://crimsonscrolls.net | ✅ PASS | 71 chapters, 14819 chars |
 | **Dreamy Translations** | https://dreamy-translations.com | ✅ PASS | 241 chapters, 10223 chars |
 | **Faq Wiki** | https://faqwiki.xyz | ✅ PASS | 402 chapters, 14317 chars |
 | **Firebird's Nest** | https://firebirdsnest.org | ✅ PASS | 133 chapters, 18894 chars |
 | **Hen Novel Translations** | https://hennoveltranslations.org | ✅ PASS | 411 chapters, 1663 chars |
 | **iNovelTranslation** | https://inoveltranslation.com | ✅ PASS | 13 chapters, 9110 chars |
-| **Konkon** | https://konkon.ink | ✅ PASS | 407 chapters, 8011 chars |
+| **Konkon** | https://konkon.ink | ✅ PASS | 58 chapters, 9660 chars |
 | **LeafStudio** | https://leafstudio.site/ | ✅ PASS | 19 chapters, 16605 chars |
 | **LnMTL** | https://lnmtl.com/ | ✅ PASS | 100 chapters, 14323 chars |
 | **LNORI** | https://lnori.com/ | ✅ PASS | 305 chapters, 336 chars |
 | **Machine Editing (MyLasted)** | https://mylasted.blogspot.com | ✅ PASS | 101 chapters, 26199 chars |
-| **Maehwasup** | https://maehwasup.com | ✅ PASS | 1189 chapters, 17625 chars |
+| **Maehwasup** | https://maehwasup.com | ✅ PASS | 1190 chapters, 17625 chars |
 | **MVLEMPYR** | https://www.mvlempyr.io/ | ✅ PASS | 839 chapters, 6979 chars |
-| **Nightjar Reads** | https://nightjarreads.com | ✅ PASS | 623 chapters, 11042 chars |
-| **Novel Archive** | https://novelarchive.cc | ✅ PASS | 3224 chapters, 11017 chars |
+| **Nightjar Reads** | https://nightjarreads.com | ✅ PASS | 625 chapters, 11042 chars |
+| **Novel Archive** | https://novelarchive.cc | ✅ PASS | 3226 chapters, 11017 chars |
 | **Novel7s** | https://novel7s.com | ✅ PASS | 70 chapters, 12123 chars |
 | **NovelDex** | https://noveldex.io | ✅ PASS | 301 chapters, 7452 chars |
 | **NovelHi** | https://novelhi.com/ | ✅ PASS | 7464 chapters, 4405 chars |
 | **NovelRest** | https://novelrest.vercel.app | ✅ PASS | 12 chapters, 563 chars |
-| **Puffin Folio** | https://www.puffinfolio.com/ | ✅ PASS | 61 chapters, 9048 chars |
+| **Puffin Folio** | https://www.puffinfolio.com/ | ✅ PASS | 64 chapters, 9048 chars |
 | **Read From Net** | https://readfrom.net/ | ✅ PASS | 17 chapters, 26953 chars |
 | **Skythewood Translations** | https://skythewood.blogspot.com | ✅ PASS | 8 chapters, 335594 chars |
 | **We Tried TLS** | https://wetriedtls.com | ✅ PASS | 893 chapters, 10750 chars |
-| **Web Novel Translation** | https://wntl.net/ | ✅ PASS | 576 chapters, 3689 chars |
+| **Web Novel Translation** | https://wntl.net/ | ✅ PASS | 581 chapters, 3689 chars |
 | **Witch Cult Translations** | https://witchculttranslation.com | ✅ PASS | 450 chapters, 30477 chars |
-| **WTR-LAB** | https://wtr-lab.com/ | ✅ PASS | 85 chapters, 7538 chars |
+| **WTR-LAB** | https://wtr-lab.com/ | ✅ PASS | 66 chapters, 10520 chars |
 | **Wuxia World** | https://www.wuxiaworld.com/ | ✅ PASS | 357 chapters, 8351 chars |
+| **Chikari** | https://chikari.moe | ❌ FAIL | Unexpected token '<', " <!doctype "... is not valid JSON |
 | **Divine Dao Library** | https://www.divinedaolibrary.com/ | ❌ FAIL | Returned no novels |
 | **Genesis** | https://genesistudio.com | ❌ FAIL | Cannot read properties of undefined (reading 'chapter_content') |
 | **Light Novel Translations** | https://lightnovelstranslations.com/ | ❌ FAIL | Returned no novels |
