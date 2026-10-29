@@ -27,7 +27,7 @@ plain `git` mirrors, search, and run-over-run diffing. **If the two ever
 disagree, the live page is current.**
 
 <details>
-<summary><strong>66 checked</strong> · ✅ 28 passing · ❌ 10 failing · ❔ 28 undetermined — expand for the snapshot</summary>
+<summary><strong>66 checked</strong> · ✅ 29 passing · ❌ 9 failing · ❔ 28 undetermined — expand for the snapshot</summary>
 
 | Source | Site | Health | Detail |
 | --- | --- | :---: | --- |
@@ -35,32 +35,32 @@ disagree, the live page is current.**
 | **Asura Scans** | https://asurascans.com | ✅ PASS | 3160 chapters, 11143 chars |
 | **Baka-Tsuki** | https://www.baka-tsuki.org/project/ | ✅ PASS | 2 chapters, 254198 chars |
 | **Beast Novels** | https://beastnovels.com/ | ✅ PASS | 876 chapters, 17700 chars |
+| **Crimson Scrolls** | https://crimsonscrolls.net | ✅ PASS | 140 chapters, 14811 chars |
 | **Dreamy Translations** | https://dreamy-translations.com | ✅ PASS | 241 chapters, 10223 chars |
 | **Faq Wiki** | https://faqwiki.xyz | ✅ PASS | 402 chapters, 14317 chars |
 | **Firebird's Nest** | https://firebirdsnest.org | ✅ PASS | 3 chapters, 9181 chars |
 | **Hen Novel Translations** | https://hennoveltranslations.org | ✅ PASS | 411 chapters, 1663 chars |
-| **iNovelTranslation** | https://inoveltranslation.com | ✅ PASS | 13 chapters, 9110 chars |
-| **Konkon** | https://konkon.ink | ✅ PASS | 58 chapters, 9660 chars |
+| **iNovelTranslation** | https://inoveltranslation.com | ✅ PASS | 14 chapters, 9110 chars |
+| **Konkon** | https://konkon.ink | ✅ PASS | 407 chapters, 8011 chars |
 | **LeafStudio** | https://leafstudio.site/ | ✅ PASS | 19 chapters, 16605 chars |
 | **LnMTL** | https://lnmtl.com/ | ✅ PASS | 100 chapters, 14323 chars |
 | **LNORI** | https://lnori.com/ | ✅ PASS | 305 chapters, 336 chars |
 | **Machine Editing (MyLasted)** | https://mylasted.blogspot.com | ✅ PASS | 101 chapters, 26199 chars |
-| **Maehwasup** | https://maehwasup.com | ✅ PASS | 1191 chapters, 17625 chars |
+| **Maehwasup** | https://maehwasup.com | ✅ PASS | 1192 chapters, 17625 chars |
 | **MVLEMPYR** | https://www.mvlempyr.io/ | ✅ PASS | 839 chapters, 6979 chars |
 | **Nightjar Reads** | https://nightjarreads.com | ✅ PASS | 625 chapters, 11042 chars |
-| **Novel Archive** | https://novelarchive.cc | ✅ PASS | 3226 chapters, 11017 chars |
+| **Novel Archive** | https://novelarchive.cc | ✅ PASS | 3227 chapters, 11017 chars |
 | **Novel7s** | https://novel7s.com | ✅ PASS | 70 chapters, 12123 chars |
 | **NovelHi** | https://novelhi.com/ | ✅ PASS | 7464 chapters, 4405 chars |
 | **NovelRest** | https://novelrest.vercel.app | ✅ PASS | 12 chapters, 563 chars |
-| **Puffin Folio** | https://www.puffinfolio.com/ | ✅ PASS | 96 chapters, 12408 chars |
+| **Puffin Folio** | https://www.puffinfolio.com/ | ✅ PASS | 54 chapters, 10661 chars |
 | **Read From Net** | https://readfrom.net/ | ✅ PASS | 17 chapters, 26953 chars |
 | **We Tried TLS** | https://wetriedtls.com | ✅ PASS | 893 chapters, 10750 chars |
 | **Web Novel Translation** | https://wntl.net/ | ✅ PASS | 581 chapters, 3689 chars |
 | **Witch Cult Translations** | https://witchculttranslation.com | ✅ PASS | 450 chapters, 30477 chars |
-| **WTR-LAB** | https://wtr-lab.com/ | ✅ PASS | 529 chapters, 9126 chars |
+| **WTR-LAB** | https://wtr-lab.com/ | ✅ PASS | 83 chapters, 9697 chars |
 | **Wuxia World** | https://www.wuxiaworld.com/ | ✅ PASS | 357 chapters, 8351 chars |
 | **Chikari** | https://chikari.moe | ❌ FAIL | Unexpected token '<', " <!doctype "... is not valid JSON |
-| **Crimson Scrolls** | https://crimsonscrolls.net | ❌ FAIL | Returned no novels |
 | **Divine Dao Library** | https://www.divinedaolibrary.com/ | ❌ FAIL | Returned no novels |
 | **Genesis** | https://genesistudio.com | ❌ FAIL | Cannot read properties of undefined (reading 'chapter_content') |
 | **Light Novel Translations** | https://lightnovelstranslations.com/ | ❌ FAIL | Returned no novels |
@@ -68,8 +68,8 @@ disagree, the live page is current.**
 | **NovelBuddy** | https://novelbuddy.me/ | ❌ FAIL | Cannot read properties of undefined (reading 'items') |
 | **NovelDex** | https://noveldex.io | ❌ FAIL | Returned no novels |
 | **Peach Puff Translations** | https://peachpuff.in/ | ❌ FAIL | Returned no novels |
-| **Skythewood Translations** | https://skythewood.blogspot.com | ❌ FAIL | Content too short (0 chars, expected >= 200) |
-| **Archive Of Our Own** | https://archiveofourown.org/ | ❔ UNKNOWN | Timeout |
+| **Skythewood Translations** | https://skythewood.blogspot.com | ❌ FAIL | Returned no novels |
+| **Archive Of Our Own** | https://archiveofourown.org/ | ❔ UNKNOWN | HTTP 418 |
 | **Asianfanfics** | https://www.asianfanfics.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 | **BornToBeNovel** | https://borntobenovel.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 | **DaoTekno** | https://daotekno.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
