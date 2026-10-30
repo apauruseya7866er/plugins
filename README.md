@@ -31,25 +31,25 @@ disagree, the live page is current.**
 
 | Source | Site | Health | Detail |
 | --- | --- | :---: | --- |
-| **Anime Anyway** | https://animeanyway.com/ | ✅ PASS | 4 chapters, 5878 chars |
+| **Anime Anyway** | https://animeanyway.com/ | ✅ PASS | 5 chapters, 5878 chars |
 | **Asura Scans** | https://asurascans.com | ✅ PASS | 3160 chapters, 11143 chars |
 | **Baka-Tsuki** | https://www.baka-tsuki.org/project/ | ✅ PASS | 2 chapters, 254198 chars |
 | **Beast Novels** | https://beastnovels.com/ | ✅ PASS | 876 chapters, 17700 chars |
-| **Crimson Scrolls** | https://crimsonscrolls.net | ✅ PASS | 140 chapters, 14811 chars |
+| **Crimson Scrolls** | https://crimsonscrolls.net | ✅ PASS | 18 chapters, 19699 chars |
 | **Dreamy Translations** | https://dreamy-translations.com | ✅ PASS | 241 chapters, 10223 chars |
 | **Faq Wiki** | https://faqwiki.xyz | ✅ PASS | 402 chapters, 14317 chars |
 | **Firebird's Nest** | https://firebirdsnest.org | ✅ PASS | 3 chapters, 9181 chars |
 | **Hen Novel Translations** | https://hennoveltranslations.org | ✅ PASS | 411 chapters, 1663 chars |
-| **iNovelTranslation** | https://inoveltranslation.com | ✅ PASS | 14 chapters, 9110 chars |
+| **iNovelTranslation** | https://inoveltranslation.com | ✅ PASS | 15 chapters, 9110 chars |
 | **Konkon** | https://konkon.ink | ✅ PASS | 407 chapters, 8011 chars |
-| **LeafStudio** | https://leafstudio.site/ | ✅ PASS | 19 chapters, 16605 chars |
+| **LeafStudio** | https://leafstudio.site/ | ✅ PASS | 20 chapters, 16605 chars |
 | **LnMTL** | https://lnmtl.com/ | ✅ PASS | 100 chapters, 14323 chars |
 | **LNORI** | https://lnori.com/ | ✅ PASS | 305 chapters, 336 chars |
 | **Machine Editing (MyLasted)** | https://mylasted.blogspot.com | ✅ PASS | 101 chapters, 26199 chars |
-| **Maehwasup** | https://maehwasup.com | ✅ PASS | 1192 chapters, 17625 chars |
+| **Maehwasup** | https://maehwasup.com | ✅ PASS | 1193 chapters, 17625 chars |
 | **MVLEMPYR** | https://www.mvlempyr.io/ | ✅ PASS | 839 chapters, 6979 chars |
-| **Nightjar Reads** | https://nightjarreads.com | ✅ PASS | 625 chapters, 11042 chars |
-| **Novel Archive** | https://novelarchive.cc | ✅ PASS | 3227 chapters, 11017 chars |
+| **Nightjar Reads** | https://nightjarreads.com | ✅ PASS | 627 chapters, 11042 chars |
+| **Novel Archive** | https://novelarchive.cc | ✅ PASS | 3229 chapters, 11017 chars |
 | **Novel7s** | https://novel7s.com | ✅ PASS | 70 chapters, 12123 chars |
 | **NovelHi** | https://novelhi.com/ | ✅ PASS | 7464 chapters, 4405 chars |
 | **NovelRest** | https://novelrest.vercel.app | ✅ PASS | 12 chapters, 563 chars |
@@ -58,7 +58,7 @@ disagree, the live page is current.**
 | **We Tried TLS** | https://wetriedtls.com | ✅ PASS | 893 chapters, 10750 chars |
 | **Web Novel Translation** | https://wntl.net/ | ✅ PASS | 581 chapters, 3689 chars |
 | **Witch Cult Translations** | https://witchculttranslation.com | ✅ PASS | 450 chapters, 30477 chars |
-| **WTR-LAB** | https://wtr-lab.com/ | ✅ PASS | 83 chapters, 9697 chars |
+| **WTR-LAB** | https://wtr-lab.com/ | ✅ PASS | 243 chapters, 12526 chars |
 | **Wuxia World** | https://www.wuxiaworld.com/ | ✅ PASS | 357 chapters, 8351 chars |
 | **Chikari** | https://chikari.moe | ❌ FAIL | Unexpected token '<', " <!doctype "... is not valid JSON |
 | **Divine Dao Library** | https://www.divinedaolibrary.com/ | ❌ FAIL | Returned no novels |
@@ -68,7 +68,7 @@ disagree, the live page is current.**
 | **NovelBuddy** | https://novelbuddy.me/ | ❌ FAIL | Cannot read properties of undefined (reading 'items') |
 | **NovelDex** | https://noveldex.io | ❌ FAIL | Returned no novels |
 | **Peach Puff Translations** | https://peachpuff.in/ | ❌ FAIL | Returned no novels |
-| **Skythewood Translations** | https://skythewood.blogspot.com | ❌ FAIL | Returned no novels |
+| **Skythewood Translations** | https://skythewood.blogspot.com | ❌ FAIL | Missing novel name |
 | **Archive Of Our Own** | https://archiveofourown.org/ | ❔ UNKNOWN | HTTP 418 |
 | **Asianfanfics** | https://www.asianfanfics.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 | **BornToBeNovel** | https://borntobenovel.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
