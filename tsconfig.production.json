@@ -114,6 +114,7 @@
   "exclude": [
     "./plugins/**/*.broken.ts",
     "./.js/**/*",
+    "test/**",
     "scripts/**",
     "docs/**",
     "./src/*.*",
