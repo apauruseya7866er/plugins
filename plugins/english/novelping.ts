@@ -28,7 +28,7 @@ type Fragment = {
 class NovelPing implements Plugin.PluginBase {
   id = 'novelping';
   name = 'NovelPing';
-  version = '1.0.0';
+  version = '1.0.1';
   icon = 'src/en/novelping/icon.png';
   site = 'https://novelping.com';
 
@@ -114,6 +114,48 @@ class NovelPing implements Plugin.PluginBase {
     return this.parseCards(parseHTML(await fetchText(url)));
   }
 
+  /**
+   * Chapter list markup, keyed off `li[data-chapter-item]` so it works for both
+   * the novel page and the archive fragment.
+   */
+  private parseChapterList($: CheerioAPI, slug: string): Plugin.ChapterItem[] {
+    const chapters: Plugin.ChapterItem[] = [];
+
+    $('li[data-chapter-item]').each((_, el) => {
+      // Each chapter item holds exactly one link; the site's own slugs are not
+      // always well formed (`chatper-…`, `chaoter-…`), so the id comes from the
+      // link itself rather than a `chapter-` pattern.
+      const anchor = $(el).find('a[href]').first();
+      const href = anchor.attr('href');
+      if (!href) return;
+
+      const chapterId =
+        new URL(href, this.site).pathname.split('/').pop() || '';
+      if (!chapterId) return;
+
+      const chapterName =
+        anchor.find('.chapter-title').first().text().trim() ||
+        anchor.attr('title')?.trim() ||
+        chapterId;
+
+      // Malformed slugs (`translate`) fall back to the number in the title,
+      // then to the position in the list.
+      const numberMatch = chapterId.match(/\d+/) || chapterName.match(/\d+/);
+      chapters.push({
+        name: chapterName,
+        chapterNumber: numberMatch
+          ? Number(numberMatch[0])
+          : chapters.length + 1,
+        // The novel slug is kept in the path because the fragment endpoint needs
+        // it as a separate `novel_id`, and the chapter slug alone does not
+        // carry it.
+        path: `/${slug}/${chapterId}`,
+      });
+    });
+
+    return chapters;
+  }
+
   async parseNovel(novelPath: string): Promise<Plugin.SourceNovel> {
     const slug = novelPath.replace(/^\/book\//, '').replace(/\/$/, '');
     const $ = parseHTML(await fetchText(`${this.site}/book/${slug}`));
@@ -155,32 +197,26 @@ class NovelPing implements Plugin.PluginBase {
         ? NovelStatus.Ongoing
         : NovelStatus.Unknown;
 
-    const chapters: Plugin.ChapterItem[] = [];
-    $('li[data-chapter-item]').each((_, el) => {
-      const anchor = $(el).find('a[href*="/chapter-"]').first();
-      const href = anchor.attr('href');
-      if (!href) return;
-
-      const chapterId = href.split('/').pop() || '';
-      if (!chapterId) return;
-
-      const chapterName =
-        anchor.find('.chapter-title').first().text().trim() ||
-        anchor.attr('title')?.trim() ||
-        chapterId;
-
-      const numberMatch = chapterId.match(/chapter-(\d+)/);
-      chapters.push({
-        name: chapterName,
-        chapterNumber: numberMatch
-          ? Number(numberMatch[1])
-          : chapters.length + 1,
-        // The novel slug is kept in the path because the fragment endpoint needs
-        // it as a separate `novel_id`, and the chapter slug alone does not
-        // carry it.
-        path: `/${slug}/${chapterId}`,
-      });
-    });
+    // The novel page server-renders only the first 30 chapters; the full list
+    // is fetched by the "Chapters" tab from /ajax/chapter-archive?novelId=<slug>,
+    // which answers with the same <li data-chapter-item> markup for every
+    // chapter. Fall back to the page's first 30 when that call fails so the
+    // plugin still returns something usable.
+    const pageChapters = this.parseChapterList($, slug);
+    let chapters = pageChapters;
+    try {
+      const archive = parseHTML(
+        await fetchText(
+          `${this.site}/ajax/chapter-archive?novelId=${encodeURIComponent(slug)}`,
+        ),
+      );
+      const archiveChapters = this.parseChapterList(archive, slug);
+      if (archiveChapters.length > pageChapters.length) {
+        chapters = archiveChapters;
+      }
+    } catch {
+      // Keep the chapters rendered inline on the novel page.
+    }
 
     return {
       path: novelPath,
