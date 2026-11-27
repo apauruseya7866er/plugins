@@ -27,29 +27,29 @@ plain `git` mirrors, search, and run-over-run diffing. **If the two ever
 disagree, the live page is current.**
 
 <details>
-<summary><strong>83 checked</strong> · ✅ 33 passing · ❌ 9 failing · ❔ 41 undetermined — expand for the snapshot</summary>
+<summary><strong>83 checked</strong> · ✅ 33 passing · ❌ 10 failing · ❔ 40 undetermined — expand for the snapshot</summary>
 
 | Source | Site | Health | Detail |
 | --- | --- | :---: | --- |
 | **Anime Anyway** | https://animeanyway.com/ | ✅ PASS | 8 chapters, 5878 chars |
 | **Asura Scans** | https://asurascans.com | ✅ PASS | 3241 chapters, 11143 chars |
 | **Baka-Tsuki** | https://www.baka-tsuki.org/project/ | ✅ PASS | 2 chapters, 254198 chars |
-| **Beast Novels** | https://beastnovels.com/ | ✅ PASS | 900 chapters, 17700 chars |
+| **Beast Novels** | https://beastnovels.com/ | ✅ PASS | 909 chapters, 17700 chars |
 | **BronsTL** | https://bronstl.com | ✅ PASS | 6 chapters, 748 chars |
 | **Chikari** | https://chikari.moe | ✅ PASS | 3256 chapters, 11048 chars |
-| **Crimson Scrolls** | https://crimsonscrolls.net | ✅ PASS | 331 chapters, 22221 chars |
+| **Crimson Scrolls** | https://crimsonscrolls.net | ✅ PASS | 331 chapters, 22229 chars |
 | **Dreamy Translations** | https://dreamy-translations.com | ✅ PASS | 241 chapters, 10223 chars |
+| **Faq Wiki** | https://faqwiki.xyz | ✅ PASS | 402 chapters, 14317 chars |
 | **Firebird's Nest** | https://firebirdsnest.org | ✅ PASS | 3 chapters, 9181 chars |
-| **Genesis** | https://genesistudio.com | ✅ PASS | 65 chapters, 8276 chars |
+| **Genesis** | https://genesistudio.com | ✅ PASS | 66 chapters, 8276 chars |
 | **Hen Novel Translations** | https://hennoveltranslations.org | ✅ PASS | 411 chapters, 1663 chars |
-| **iNovelTranslation** | https://inoveltranslation.com | ✅ PASS | 38 chapters, 9110 chars |
-| **Konkon** | https://konkon.ink | ✅ PASS | 71 chapters, 10274 chars |
-| **LeafStudio** | https://leafstudio.site/ | ✅ PASS | 30 chapters, 16605 chars |
+| **iNovelTranslation** | https://inoveltranslation.com | ✅ PASS | 39 chapters, 9110 chars |
+| **Konkon** | https://konkon.ink | ✅ PASS | 558 chapters, 11136 chars |
 | **Light Novel Translations** | https://lightnovelstranslations.com/ | ✅ PASS | 32 chapters, 8119 chars |
-| **LightNovel.to** | https://lightnovel.to | ✅ PASS | 1143 chapters, 6813 chars |
+| **LightNovel.to** | https://lightnovel.to | ✅ PASS | 1145 chapters, 6813 chars |
 | **LnMTL** | https://lnmtl.com/ | ✅ PASS | 100 chapters, 14323 chars |
 | **LNORI** | https://lnori.com/ | ✅ PASS | 305 chapters, 336 chars |
-| **Maehwasup** | https://maehwasup.com | ✅ PASS | 1214 chapters, 17625 chars |
+| **Maehwasup** | https://maehwasup.com | ✅ PASS | 1216 chapters, 17625 chars |
 | **Mizupan's Archives** | https://mizupanshoko.wordpress.com | ✅ PASS | 39 chapters, 4023 chars |
 | **MVLEMPYR** | https://www.mvlempyr.io/ | ✅ PASS | 839 chapters, 6979 chars |
 | **Nightjar Reads** | https://nightjarreads.com | ✅ PASS | 100 chapters, 11042 chars |
@@ -62,18 +62,19 @@ disagree, the live page is current.**
 | **We Tried TLS** | https://wetriedtls.com | ✅ PASS | 893 chapters, 10750 chars |
 | **Web Novel Translation** | https://wntl.net/ | ✅ PASS | 601 chapters, 3689 chars |
 | **Witch Cult Translations** | https://witchculttranslation.com | ✅ PASS | 452 chapters, 30477 chars |
-| **WTR-LAB** | https://wtr-lab.com/ | ✅ PASS | 195 chapters, 12881 chars |
+| **WTR-LAB** | https://wtr-lab.com/ | ✅ PASS | 116 chapters, 9216 chars |
 | **Wuxia World** | https://www.wuxiaworld.com/ | ✅ PASS | 357 chapters, 8351 chars |
 | **Divine Dao Library** | https://www.divinedaolibrary.com/ | ❌ FAIL | Returned no novels |
-| **Faq Wiki** | https://faqwiki.xyz | ❌ FAIL | Returned no novels |
+| **LeafStudio** | https://leafstudio.site/ | ❌ FAIL | Returned no novels |
 | **LightNovelWorld** | https://lightnovelworld.org/ | ❌ FAIL | Returned no novels |
+| **LNCrawler** | https://lncrawler.monster | ❌ FAIL | Could not load the novel a-record-of-a-mortal-s-journey-to-immortality?lang=en |
 | **Machine Editing (MyLasted)** | https://mylasted.blogspot.com | ❌ FAIL | Machine Editing: HTTP 429. |
 | **NovelDex** | https://noveldex.io | ❌ FAIL | Returned no novels |
 | **Peach Puff Translations** | https://peachpuff.in/ | ❌ FAIL | Returned no novels |
 | **Read From Net** | https://readfrom.net/ | ❌ FAIL | Returned no novels |
 | **Seirei Translations** | https://seireitranslations.blogspot.com | ❌ FAIL | Seirei Translations: HTTP 429. |
 | **Skythewood Translations** | https://skythewood.blogspot.com | ❌ FAIL | Returned no novels |
-| **Archive Of Our Own** | https://archiveofourown.org/ | ❔ UNKNOWN | Network error (ETIMEDOUT) |
+| **Archive Of Our Own** | https://archiveofourown.org/ | ❔ UNKNOWN | Timeout |
 | **Asianfanfics** | https://www.asianfanfics.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 | **Atsumaru** | https://atsu.moe | ❔ UNKNOWN | 403 Cloudflare edge challenge (bot rule) |
 | **BoonNovel** | https://reader.boondollars.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
@@ -91,7 +92,6 @@ disagree, the live page is current.**
 | **Indra Translations** | https://indratranslations.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 | **Inkitt** | https://www.inkitt.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 | **KDT Novels** | https://kdtnovels.net/ | ❔ UNKNOWN | 403 (likely anti-bot block) |
-| **LNCrawler** | https://lncrawler.monster | ❔ UNKNOWN | fetch failed |
 | **Luminare Translations** | https://luminaretranslations.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 | **Mynovels** | https://mynovels.su/ | ❔ UNKNOWN | 403 Cloudflare edge challenge (bot rule) |
 | **Novel Archive** | https://novelarchive.cc | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
@@ -107,7 +107,7 @@ disagree, the live page is current.**
 | **Puffin Folio** | https://www.puffinfolio.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 | **Rainofsnow** | https://rainofsnow.com/ | ❔ UNKNOWN | fetch failed |
 | **Re:Library** | https://re-library.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
-| **ReChapters** | https://www.rechapters.com | ❔ UNKNOWN | 503 Cloudflare edge challenge (bot rule) |
+| **ReChapters** | https://www.rechapters.com | ❔ UNKNOWN | HTTP 522 |
 | **Royal Road** | https://www.royalroad.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 | **Scribble Hub** | https://www.scribblehub.com/ | ❔ UNKNOWN | 403 Cloudflare edge challenge (bot rule) |
 | **StorySeedling** | https://storyseedling.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
