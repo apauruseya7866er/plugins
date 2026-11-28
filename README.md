@@ -27,7 +27,7 @@ plain `git` mirrors, search, and run-over-run diffing. **If the two ever
 disagree, the live page is current.**
 
 <details>
-<summary><strong>83 checked</strong> · ✅ 33 passing · ❌ 10 failing · ❔ 40 undetermined — expand for the snapshot</summary>
+<summary><strong>83 checked</strong> · ✅ 33 passing · ❌ 9 failing · ❔ 41 undetermined — expand for the snapshot</summary>
 
 | Source | Site | Health | Detail |
 | --- | --- | :---: | --- |
@@ -37,14 +37,14 @@ disagree, the live page is current.**
 | **Beast Novels** | https://beastnovels.com/ | ✅ PASS | 909 chapters, 17700 chars |
 | **BronsTL** | https://bronstl.com | ✅ PASS | 6 chapters, 748 chars |
 | **Chikari** | https://chikari.moe | ✅ PASS | 3256 chapters, 11048 chars |
-| **Crimson Scrolls** | https://crimsonscrolls.net | ✅ PASS | 331 chapters, 22229 chars |
+| **Crimson Scrolls** | https://crimsonscrolls.net | ✅ PASS | 69 chapters, 10683 chars |
 | **Dreamy Translations** | https://dreamy-translations.com | ✅ PASS | 241 chapters, 10223 chars |
 | **Faq Wiki** | https://faqwiki.xyz | ✅ PASS | 402 chapters, 14317 chars |
 | **Firebird's Nest** | https://firebirdsnest.org | ✅ PASS | 3 chapters, 9181 chars |
-| **Genesis** | https://genesistudio.com | ✅ PASS | 66 chapters, 8276 chars |
-| **Hen Novel Translations** | https://hennoveltranslations.org | ✅ PASS | 411 chapters, 1663 chars |
+| **Genesis** | https://genesistudio.com | ✅ PASS | 80 chapters, 9768 chars |
+| **Hen Novel Translations** | https://hennoveltranslations.org | ✅ PASS | 411 chapters, 1938 chars |
 | **iNovelTranslation** | https://inoveltranslation.com | ✅ PASS | 39 chapters, 9110 chars |
-| **Konkon** | https://konkon.ink | ✅ PASS | 558 chapters, 11136 chars |
+| **Konkon** | https://konkon.ink | ✅ PASS | 146 chapters, 3738 chars |
 | **Light Novel Translations** | https://lightnovelstranslations.com/ | ✅ PASS | 32 chapters, 8119 chars |
 | **LightNovel.to** | https://lightnovel.to | ✅ PASS | 1145 chapters, 6813 chars |
 | **LnMTL** | https://lnmtl.com/ | ✅ PASS | 100 chapters, 14323 chars |
@@ -62,13 +62,12 @@ disagree, the live page is current.**
 | **We Tried TLS** | https://wetriedtls.com | ✅ PASS | 893 chapters, 10750 chars |
 | **Web Novel Translation** | https://wntl.net/ | ✅ PASS | 601 chapters, 3689 chars |
 | **Witch Cult Translations** | https://witchculttranslation.com | ✅ PASS | 452 chapters, 30477 chars |
-| **WTR-LAB** | https://wtr-lab.com/ | ✅ PASS | 116 chapters, 9216 chars |
+| **WTR-LAB** | https://wtr-lab.com/ | ✅ PASS | 109 chapters, 12193 chars |
 | **Wuxia World** | https://www.wuxiaworld.com/ | ✅ PASS | 357 chapters, 8351 chars |
 | **Divine Dao Library** | https://www.divinedaolibrary.com/ | ❌ FAIL | Returned no novels |
 | **LeafStudio** | https://leafstudio.site/ | ❌ FAIL | Returned no novels |
 | **LightNovelWorld** | https://lightnovelworld.org/ | ❌ FAIL | Returned no novels |
 | **LNCrawler** | https://lncrawler.monster | ❌ FAIL | Could not load the novel a-record-of-a-mortal-s-journey-to-immortality?lang=en |
-| **Machine Editing (MyLasted)** | https://mylasted.blogspot.com | ❌ FAIL | Machine Editing: HTTP 429. |
 | **NovelDex** | https://noveldex.io | ❌ FAIL | Returned no novels |
 | **Peach Puff Translations** | https://peachpuff.in/ | ❌ FAIL | Returned no novels |
 | **Read From Net** | https://readfrom.net/ | ❌ FAIL | Returned no novels |
@@ -93,6 +92,7 @@ disagree, the live page is current.**
 | **Inkitt** | https://www.inkitt.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 | **KDT Novels** | https://kdtnovels.net/ | ❔ UNKNOWN | 403 (likely anti-bot block) |
 | **Luminare Translations** | https://luminaretranslations.com | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
+| **Machine Editing (MyLasted)** | https://mylasted.blogspot.com | ❔ UNKNOWN | Network error (ETIMEDOUT) |
 | **Mynovels** | https://mynovels.su/ | ❔ UNKNOWN | 403 Cloudflare edge challenge (bot rule) |
 | **Novel Archive** | https://novelarchive.cc | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
 | **Novel Arrow** | https://novelarrow.com/ | ❔ UNKNOWN | 403 blocked by Cloudflare (cf-mitigated: challenge) |
